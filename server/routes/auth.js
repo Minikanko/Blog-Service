@@ -1,9 +1,8 @@
 import express from 'express';
-import User from '../model/user';
+import user from '../model/user';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import auth from '../middleware/auth';
-import e from 'express';
 
 
 const router = express.Router();
@@ -15,7 +14,7 @@ router.post('/', (req,res,next) => {
         return res.status(400).json({msg:'아이디와 패스워드를 입력해주세요'});
     }
 
-    User.findOne({email}).then((user) => {
+    user.findOne({email}).then((user) => {
         if(!user) {
             return res.status(400).json({msg:"없는 사용자입니다."});
         }
@@ -44,7 +43,6 @@ router.post('/', (req,res,next) => {
         
     })
 })
-
 
 router.post('/logout', (req,res) => {
     res.json("로그아웃 성공");

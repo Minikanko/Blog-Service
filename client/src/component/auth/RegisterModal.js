@@ -60,7 +60,7 @@ const RegisterModal = () => {
                     </ModalHeader>
                     <ModalBody>
                         {localMsg? <Alert color='danger'> {localMsg} </Alert> : null}
-                        <Form onSubmit={onsubmit}>
+                        <Form onSubmit={onSubmit}>
                             <FormGroup>
                                 <Label for='name'>Name</Label>
                                 <Input
@@ -68,7 +68,7 @@ const RegisterModal = () => {
                                     id='name'
                                     name='name'
                                     placeholder='Name'
-                                    onChange={onchange}
+                                    onChange={onChange}
                                 />
                                 <Label for='email'>Email</Label>
                                 <Input
@@ -76,7 +76,7 @@ const RegisterModal = () => {
                                     id='email'
                                     name='email'
                                     placeholder='Email'
-                                    onChange={onchange}
+                                    onChange={onChange}
                                 />
                                 <Label for='password'>Password</Label>
                                 <Input
@@ -84,7 +84,7 @@ const RegisterModal = () => {
                                     id='password'
                                     name='password'
                                     placeholder='Password'
-                                    onChange={onchange}
+                                    onChange={onChange}
                                 />
                                 <Button color='black' className='mt-2' block>
                                     Register
@@ -93,7 +93,6 @@ const RegisterModal = () => {
                         </Form>
                     </ModalBody>
                 </Modal>
-
             </NavLink>
         </div>
     )

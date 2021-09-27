@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "babel-node": "0.0.1-security",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^6.0.5",
     "morgan": "^1.10.0"
@@ -19,11 +22,10 @@
     "@babel/node": "^7.15.4",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.15.6",
-    "babel-loader": "^8.2.2",
     "nodemon": "^2.0.12"
   },
   "scripts": {
-    "dev": "nodemon ./server/server.js --exec babel-node"
+    "dev": "nodemon ./server/server.js --exec babel-node --ignore ./client"
   },
   "repository": {
     "type": "git",

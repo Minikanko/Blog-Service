@@ -22,7 +22,7 @@ const postSchema = new mongoose.Schema({
     },
     category: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'category',
+        ref: 'Category',
     },
     date: {
         type: String,
@@ -31,15 +31,15 @@ const postSchema = new mongoose.Schema({
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'comment',
+            ref: 'Comment',
         }
     ],
     creator: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
 });
 
-const post = mongoose.model('post', postSchema);
+const post = mongoose.model('Post', postSchema);
 
 export default post;

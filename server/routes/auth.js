@@ -1,5 +1,5 @@
 import express from 'express';
-import user from '../model/user';
+import User from '../model/user';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import auth from '../middleware/auth';
@@ -14,7 +14,7 @@ router.post('/', (req,res,next) => {
         return res.status(400).json({msg:'아이디와 패스워드를 입력해주세요'});
     }
 
-    user.findOne({email}).then((user) => {
+    User.findOne({email}).then((user) => {
         if(!user) {
             return res.status(400).json({msg:"없는 사용자입니다."});
         }
@@ -51,7 +51,7 @@ router.post('/logout', (req,res) => {
 //auth는 토큰있는 유저만 접근
 router.post('/user', auth, async(req,res) => {
     try {
-        console.log("aush/user", req)
+        console.log("auth/user", req)
         const user = await User.findById(req.user.id).select("-password")
         if(!user) {
             throw new Error("유저가 존재하지 않습니다.");

@@ -9,12 +9,12 @@ const categorySchema = new mongoose.Schema({
     posts: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'post'
+            ref: 'Post'
         },
     ],
 
 });
 
-const categorySchema = mongoose.model('category', categorySchema);
+const categorySchema = mongoose.model('Category', categorySchema);
 
 export default category;

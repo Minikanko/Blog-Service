@@ -6,7 +6,7 @@ import auth from "../middleware/auth"
 const router = express.Router();
 
 router.get('/', async(req,res) => {
-    const postFindResult = await post.find();
+    const postFindResult = await Post.find();
     console.log(postFindResult, "All post Get");
     res.json(postFindResult);
 });

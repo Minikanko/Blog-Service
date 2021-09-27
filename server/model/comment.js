@@ -1,6 +1,5 @@
 import moment from "moment";
-import  mongoose  from "mongoose";
-import post from "./post";
+import mongoose  from "mongoose";
 
 
 const commentSchema = new mongoose.Schema({
@@ -14,16 +13,16 @@ const commentSchema = new mongoose.Schema({
     },
     post: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'post',
+        ref: 'Post',
     },
     creator: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
+        ref: 'User',
     },
     
 });
 
-const comment = mongoose.model('comment', commentSchema);
+const comment = mongoose.model('Comment', commentSchema);
 
 
 export default comment;

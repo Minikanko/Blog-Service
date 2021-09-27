@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     role: {
+        type: String,
         enum: ['Admin','Manager','User'],
         default: 'User',
     },
@@ -43,6 +44,6 @@ const userSchema = new mongoose.Schema({
     ],
 });
 //다른 테이블에서 참조할때 해당 userSchema 테이블은 user로 접근한다.
-const user = mongoose.model('user',userSchema);
+const user = mongoose.model('User',userSchema);
 
 export default user;

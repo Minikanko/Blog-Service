@@ -2,6 +2,7 @@ import { all, fork } from 'redux-saga/effects'
 import dotenv from 'dotenv'
 import axios from 'axios'
 import authSaga from './authSaga'
+import postSaga from './postSaga'
 
 dotenv.config();
 //axios.defaults.baseURL = process.env.config.REDUX_APP_BASIC_SERVER_URL;
@@ -11,6 +12,7 @@ axios.defaults.baseURL = 'http://localhost:7050';
 
 export default function* rootSaga(){
     yield all([
-        fork(authSaga)
+        fork(authSaga),
+        fork(postSaga)
     ]);
 }

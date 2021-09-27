@@ -13,3 +13,15 @@
     background-repeat: no-repeat;
     padding-top:40px;
 }
+
+//bootstrap에서 card의 className에 top은 .card-img-top을 의미함
+.card-img-top {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+//viewPort의 비례
+#main-body{
+    min-width:90vh;
+}
